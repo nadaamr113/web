@@ -13,22 +13,23 @@ else{
     $LastName = $_POST['lastname'];
     $Email = $_POST['email'];
     $Password = $_POST['password'];
-    $confirmpass=$_post['confirmpassword'];
+    $confirmpass=$_POST['confirmpassword'];
 
-    $sql = "INSERT INTO user (firstname,lastname,email,password,confirmpassword) VALUES ('$FirstName','$LastName','$Email','$Password',$confirmpass);";
+    $sql = "INSERT INTO signup(firstname,lastname,email,password,confirmpassword) VALUES ('$FirstName','$LastName','$Email','$Password','$confirmpass');";
     if(mysqli_query($conn,$sql))
     {
+      
         echo "Sign Up Complete";
-        header('location:login.php');
+         header("location:home.html");
+       
     }
     else{
         echo "Sign Up Failed!";
+
 
     }
 
     mysqli_close($conn);
 
 }   
-
-
 ?>

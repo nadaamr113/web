@@ -17,7 +17,7 @@ if(isset($_POST['submit'])){
         $row = mysqli_fetch_assoc(mysqli_query($conn,$sql));
         echo 'Welcome '. $row['username'] . " " . $row['password'];
     
-        header("location:menu.html");
+        header("location:home.html");
     }
     else
     {

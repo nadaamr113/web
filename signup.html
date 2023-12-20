@@ -120,7 +120,7 @@
          <div class="text">
             sign up
          </div>
-         <form>
+         <form method="POST" action="signup.php">
             <div class="field">
                <div class="fas fa-envelope"></div>
                <input type="text" placeholder="first name" name="firstname">
@@ -128,12 +128,12 @@
 
             <div class="field">
             <div class="fas fa-envelope"></div>
-            <input type="text" placeholder="last name " name="lastname">
+            <input type="text" placeholder="last name" name="lastname">
            </div>
             
            <div class="field">
             <div class="fas fa-lock"></div>
-            <input type="text" placeholder="E-mail" name="email">
+            <input type="email" placeholder="E-mail" name="email">
          </div>
           
            <div class="field">
@@ -143,16 +143,14 @@
 
             <div class ="field"> 
             <div class="fas fa-lock"></div>
-            <input type="password" placeholder=" confirm Password" name="confirmpassword">
+            <input type="password" placeholder="confirm Password" name="confirmpassword">
             </div>
 
-           
             
-
             <button>SUBMIT</button>
             <div class="link">
                Didn't have account?
-               <a href="#">Register Now</a>
+               <a href="index.php">Register Now</a>
             </div>
          </form>
       </div> 
