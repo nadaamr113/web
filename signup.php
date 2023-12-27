@@ -1,6 +1,6 @@
 <?php
 
-include_once('Connection.php');
+include_once('connection.php');
 
 
 if(!$conn)
@@ -12,24 +12,33 @@ else{
     $FirstName = $_POST['firstname'];
     $LastName = $_POST['lastname'];
     $Email = $_POST['email'];
-    $Password = $_POST['password'];
-    $confirmpass=$_POST['confirmpassword'];
+    $Password = sha1($_POST['password']);
+    $confirmpass= sha1($_POST['confirmpassword']);
 
-    $sql = "INSERT INTO signup(firstname,lastname,email,password,confirmpassword) VALUES ('$FirstName','$LastName','$Email','$Password','$confirmpass');";
-    if(mysqli_query($conn,$sql))
-    {
-      
-        echo "Sign Up Complete";
-         header("location:home.html");
-       
+    if ($Password !== $confirmpass) {
+        echo '<script>alert("Passwords don\'t match!");</script>';
     }
+        
     else{
-        echo "Sign Up Failed!";
 
-
+        $sql = "INSERT INTO signup(firstname,lastname,email,password,confirmpassword) VALUES ('$FirstName','$LastName','$Email','$Password','$confirmpass');";
+        if(mysqli_query($conn,$sql))
+        {
+          
+            echo "Sign Up Complete";
+             header("location:index.php");
+           
+        }
+        else{
+            echo "Sign Up Failed!";
+    
+    
+        }
+    
+        mysqli_close($conn);
     }
-
-    mysqli_close($conn);
+   
 
 }   
+
 ?>

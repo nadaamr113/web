@@ -13,7 +13,7 @@
             <h1>Login</h1>
             <form  action ="login.php" method="POST">
                 <div class="txt_field">
-                    <input type="text" name="userName" required>
+                    <input type="text" name="firstname" required>
                     <span></span>
                     <label> Username</label>
                 </div>
