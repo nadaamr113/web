@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khantopia</title>
+    <link rel="stylesheet" href="home.css">
+    <!-- Font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+</head>
+<body>
+    <!-- Header start -->
+    <header>
+        <div id="navbar">
+            <img src="image/Khantopia-removebg-preview.png" alt="Locatopia logo">
+            <nav>
+                <ul>
+                    <li><a href="#trend">trends</a></li>
+                    <li><a href="#about">about us</a></li>
+                    <li><a href="contactus.html">Contact us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <h1>Welcome to <span class="primary-text">Khantopia</span></h1>
+            <p id="secondary-text">Your destination for unique local products</p>
+            <a href="menu.html" class="btn btn-primary">Start shopping</a>
+        </div>
+    </header>
+    <!-- Header end -->
+    <main>
+        <!-- About start -->
+        <section id="about">
+            <div class="container">
+                <div class="title">
+                    <h2 class="about">About Khantopia</h2>
+                </div>
+                <div class="about-container">
+                    <div>
+                        <p>Locatpia is an online marketplace that connects you with local
+                            brands and their unique products. We believe in supporting local
+                            businesses and helping them thrive. With Locatpia, you can
+                            discover high-quality products made with love and passion by
+                            artisans and entrepreneurs in your community. Join us in
+                            celebrating the creativity and craftsmanship of local brands.</p>
+                    </div>
+                    <img src="image/AdobeStock_333176987_Preview.jpeg" alt="shopping">
+                </div>
+            </div>
+        </section>
+        <!-- About end -->
+        <!-- Trending start -->
+        <section id="trending" class="overlay">
+            <div class="container">
+                <div class="title">
+                    <h2 class="trend">Trending Brands</h2>
+                </div>
+                <!-- <div class="trending-brands">
+                    <div class="div1">
+                        <img src="./images/12778969_243038209365358_6536258967803288939_o.jpg" alt="pheel">
+                    <div>
+                        <h3>Pheel</h3>
+                    </div>
+                    </div>
+                    <div class="div2">
+                        <img src="./images/71498772_2417629628306183_9068245098092822528_n.jpg" alt="kiliim">
+                    <div>
+                        <h3>Kiliim</h3>
+                    </div>
+                    </div>
+                    <div class="div3">
+                        <img src="./images/in-your-shoe.webp" alt="in-your-shoe">
+                    <div>
+                        <h3>In Your Shoe</h3>
+                    </div>
+                    </div>
+                    <div class="div4">
+                        <img src="./images/rawafrican.webp" alt="rawafrican">
+                    <div>
+                        <h3>Raw African</h3>
+                    </div>
+                    </div>
+                </div>
+                -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                      <!-- Slides -->
+                      <div class="swiper-slide">
+                        <img src="image/pheel.jpg" alt="pheel">
+                        <div>
+                            <h3>Pheel</h3>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="image/in-your-shoe.webp" alt="in-your-shoe">
+                        <div>
+                            <h3>In Your Shoe</h3>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="image/Kimili.jpg" alt="Kiliim">
+                        <div>
+                            <h3>Kiliim</h3>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="image/palma.webp" alt="palma">
+                        <div>
+                            <h3>Palma</h3>
+                        </div>
+                      </div>
+                      ...
+                    </div>
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                  </div>
+
+                  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                  
+                  <script>
+                    const swiper = new Swiper('.swiper', {
+                        loop: true,
+                        // Navigation arrows
+                        navigation: {
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        },
+
+                        // And if we need scrollbar
+                    });
+                  </script>
+            </div>
+        </section>
+        <!-- Trending end -->
+    </main>
+    
+</body>
+</html>
