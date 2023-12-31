@@ -5,7 +5,8 @@ if (isset($_POST['add_product'])) {
         $name = $_POST['product_name'];
         $price = $_POST['price'];
         $brand_name = $_POST['brand_name'];
-
+        $product_quantity = $_POST['product_quantity'];
+        
         // Check if the brand exists in the brands table
         $stmt = $con->prepare("SELECT brand_id FROM brands WHERE brand_name = :brand_name");
         $stmt->bindParam(':brand_name', $brand_name);
@@ -55,11 +56,13 @@ if (isset($_POST['add_product'])) {
                 // If everything is fine, try to upload file
                 if (move_uploaded_file($_FILES["product_image"]["tmp_name"], $targetFile)) {
                     // Insert new product into the database using the obtained brand_id and image path
-                    $insert_sql = "INSERT INTO products (product_name, price, brand_id, product_image) VALUES (:name, :price, :brand_id, :image)";
+                    $insert_sql = "INSERT INTO products (product_name, price, brand_id, product_image, product_quantity, brand_name) VALUES (:name, :price, :brand_id, :image, :product_quantity, :brand_name)";
                     $stmt = $con->prepare($insert_sql);
                     $stmt->bindParam(':name', $name);
                     $stmt->bindParam(':price', $price);
                     $stmt->bindParam(':brand_id', $brand_id);
+                    $stmt->bindParam(':product_quantity', $product_quantity);
+                    $stmt->bindParam(':brand_name', $brand_name);
                     $stmt->bindParam(':image', $targetFile); // Store the image path in the database
 
                     if ($stmt->execute()) {
